@@ -59,3 +59,18 @@ To install the necessary dependencies, use the following command:
 
 ```bash
 pip install -r requirements.txt
+```
+
+## Usage
+To use the model for predicting the selling price, follow these steps:
+
+- Load the dataset.
+- Preprocess the data.
+- Train the model using the training data.
+- Use the trained model to make predictions on new data.
+
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+## License
+This project is licensed under the MIT License. 
