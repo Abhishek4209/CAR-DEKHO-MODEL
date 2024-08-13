@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Brand and Model Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form>
+        <label for="brand">Brand:</label>
+        <select id="brand" name="brand">
+            <option value="">Select a brand</option>
+            {% for brand in brands %}
+            <option value="{{ brand }}">{{ brand }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="model">Model:</label>
+        <select id="model" name="model">
+            <option value="">Select a model</option>
+        </select>
+    </form>
+    <script>
+        $(document).ready(function(){
+            $('#brand').change(function(){
+                var brand = $(this).val();
+                $.ajax({
+                    url: '/models/' + brand,
+                    method: 'GET',
+                    success: function(data) {
+                        $('#model').empty();
+                        $('#model').append('<option value="">Select a model</option>');
+                        $.each(data, function(index, value) {
+                            $('#model').append('<option value="'+ value +'">'+ value +'</option>');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
