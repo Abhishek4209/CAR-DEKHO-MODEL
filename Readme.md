@@ -1,6 +1,6 @@
 # Car Dekho Price Prediction Model
 
-![alt text](car.png)
+![alt text](static/img/car.png)
 This project involves the development of a machine learning model to predict the selling prices of cars using various input features. The model is built using Python and leverages several key machine learning techniques to deliver accurate predictions.
 
 ## Table of Contents
