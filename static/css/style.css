@@ -1,71 +1,71 @@
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-        .welcome-container {
-            background-image: url('car.png');
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            text-shadow: 2px 2px 4px #000000;
-        }
+.welcome-container {
+    background-image: url('../img/car.png');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
 
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
 
-        p {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
+p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
 
-        .btn {
-            background-color: #922ed5;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-        }
+.btn {
+    background-color: #922ed5;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
 
-        .btn:hover {
-            background-color: #1b8734;
-        }
+.btn:hover {
+    background-color: #1b8734;
+}
 
-        .author-info {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: left;
-        }
+.author-info {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
 
-        .author-info img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-left: 100px;
-            border: 1px solid #09f130; /* Added green color ring */
-        }
+.author-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 100px;
+    border: 1px solid #09f130; /* Added green color ring */
+}
 
-        .author-info a {
-            color: #3ad80e;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+.author-info a {
+    color: #3ad80e;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-        .author-info a:hover {
-            color: #0a93ef;
-        }
+.author-info a:hover {
+    color: #0a93ef;
+}

@@ -24,7 +24,3 @@ if __name__ == '__main__':
     # MODEL TRAINER START:
     model_trainer=ModelTrainer()
     model_trainer.intiate_model_trainer(train_arr,test_arr)
-    
-    
-    
-    
