@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../img/car.mp4);
+    /* background-color: #12a1df; */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+form {
+    /* background-color: #140d0d; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(149, 44, 44, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    color: #07458c;
+}
+
+.form-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-column div {
+    width: calc(33% - 10px);
+    margin-bottom: 15px;
+}
+
+label {
+
+    size: 100px;
+    display: block;
+    margin-bottom: 5px;
+    color: #f40707;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 3px solid #4a6e6b;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #08676a;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #be772b;
+}
+

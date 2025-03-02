@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dekho Price Prediction</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleform.css') }}">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="{{ url_for('static', filename='img/car.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    
+    <form id="carForm">
+        <h2>Car Dekho </h2>
+
+        <div class="form-column">
+            <div>
+                <label for="brand">Brand:</label>
+                <select id="brand" name="brand" required>
+                    <option value="">Select Brand</option>
+                    {% for brand in brands %}
+                    <option value="{{ brand }}">{{ brand }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="model">Model:</label>
+                <select id="model" name="model" required>
+                    <option value="">Select Model</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="fuel_type">Fuel Type:</label>
+                <select id="fuel_type" name="fuel_type" required>
+                    <option value="">Select Fuel Type</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-column">
+            <div>
+                <label for="seats">Seats:</label>
+                <select id="seats" name="seats" required>
+                    <option value="">Select Seats</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="transmission_type">Transmission Type:</label>
+                <select id="transmission_type" name="transmission_type" required>
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="mileage">Mileage (km/l):</label>
+                <input type="number" id="mileage" name="mileage" step="0.1" required>
+            </div>
+        </div>
+
+        <div class="form-column">
+            <div>
+                <label for="engine">Engine (CC):</label>
+                <input type="number" id="engine" name="engine" required>
+            </div>
+
+            <div>
+                <label for="max_power">Max Power (BHP):</label>
+                <input type="number" id="max_power" name="max_power" required>
+            </div>
+
+            <div>
+                <label for="vehicle_age">Vehicle Age (Years):</label>
+                <input type="number" id="vehicle_age" name="vehicle_age" required>
+            </div>
+        </div>
+
+        <div class="form-column">
+            <div>
+                <label for="km_driven">Kilometers Driven:</label>
+                <input type="number" id="km_driven" name="km_driven" required>
+            </div>
+
+            <div>
+                <label for="seller_type">Seller Type:</label>
+                <select id="seller_type" name="seller_type" required>
+                    <option value="">Select Seller Type</option>
+                    <option value="Dealer">Dealer</option>
+                    <option value="Individual">Individual</option>
+                    <option value="Trustmark Dealer">Trustmark Dealer</option>
+                </select>
+            </div>
+        </div>
+        <a href="/result">
+        <button type="submit">Predict Price</button>
+    </a>
+
+    </form>
+<h2> prices : {{car_prices}}</h2>
+
+    <script>
+        $(document).ready(function() {
+            $('#brand').change(function() {
+                var brand = $(this).val();
+                $.post('/get_models', { brand: brand }, function(data) {
+                    $('#model').empty().append('<option value="">Select Model</option>');
+                    data.forEach(function(model) {
+                        $('#model').append('<option value="' + model + '">' + model + '</option>');
+                    });
+                });
+            });
+
+            $('#model').change(function() {
+                var model = $(this).val();
+                var car_name = $('#brand').val() + ' ' + model;
+                $.post('/get_car_info', { car_name: car_name }, function(data) {
+                    $('#fuel_type').empty().append('<option value="">Select Fuel Type</option>');
+                    data[0].forEach(function(fuel) {
+                        $('#fuel_type').append('<option value="' + fuel + '">' + fuel + '</option>');
+                    });
+                    $('#seats').empty().append('<option value="">Select Seats</option>');
+                    data[1].forEach(function(seat) {
+                        $('#seats').append('<option value="' + seat + '">' + seat + '</option>');
+                    });
+                });
+            });
+
+            $('#carForm').submit(function(e) {
+                e.preventDefault();
+                $.post('/predict', $(this).serialize(), function(data) {
+                    
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../img/car.png);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* background: linear-gradient(135deg, #0bb9e0, #acb6e5); */
+    /* color: #333; */
+}
+
+.container {
+    background-color: #dcc0f8;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.result {
+    margin-top: 20px;
+    color: #49aa15;
+}
+
+#final_result {
+    font-size: 18px;
+    color: #555;
+}
+
+#model_output {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0d9ea3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
